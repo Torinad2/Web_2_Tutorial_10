@@ -30,3 +30,34 @@
 	
 */
 
+/* Установить дату, отображаемую в календаре */
+var thisDay = new Date("August 24, 2018");
+
+/* Вывести календарь в элемент с id="calendar" */
+document.getElementById("calendar").innerHTML = createCalendar(thisDay);
+
+/* Функция для генерации таблицы календаря */
+function createCalendar(calDate) {
+    var calendarHTML = "<table id='calendar_table'>";
+    calendarHTML += calCaption(calDate);
+    calendarHTML += "</table>";
+    return calendarHTML;
+}
+
+/* Функция для вывода заголовка календаря */
+function calCaption(calDate) {
+
+    // Массив monthName содержит список названий месяцев
+    var monthName = ["January", "February", "March", "April",
+                            "May", "June", "July", "August", "September",
+                            "October", "November", "December"];
+    // Определить текущий месяц
+    var thisMonth = calDate.getMonth();
+
+    // Определить текущий год
+    var thisYear = calDate.getFullYear();
+
+    // Записать заголовок
+    return "<caption>" + monthName[thisMonth] + " " + thisYear + "</caption>";
+}
+
