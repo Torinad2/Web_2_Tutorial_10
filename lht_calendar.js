@@ -33,6 +33,8 @@
 /* Установить дату, отображаемую в календаре */
 var thisDay = new Date("August 24, 2018");
 
+//console.log(createCalendar(thisDay));
+
 /* Вывести календарь в элемент с id="calendar" */
 document.getElementById("calendar").innerHTML = createCalendar(thisDay);
 
@@ -60,4 +62,3 @@ function calCaption(calDate) {
     // Записать заголовок
     return "<caption>" + monthName[thisMonth] + " " + thisYear + "</caption>";
 }
-
